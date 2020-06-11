@@ -1,7 +1,7 @@
 import React from 'react';
 import GlobalData from '../repository/loadJsonData';
 import { Panel, PanelHeader } from '@marketgoo/ola';
-import CovidPanelContent from './CovidPanelContent';
+import CovidPanelContent from '../components/CovidPanelContent';
 
 export default () => {
   return (
