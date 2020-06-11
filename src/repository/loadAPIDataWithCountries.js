@@ -1,6 +1,6 @@
 const ENDPOINT = 'https://api.covid19api.com/summary';
 
-const loadAPIData = (handleData, handleError) => {
+const loadAPIDataWithCountries = (handleData, handleCountries, handleError) => {
   fetch(ENDPOINT)
     .then((response) => {
       if (response.ok) {
@@ -21,6 +21,7 @@ const loadAPIData = (handleData, handleError) => {
           totalRecovered: data.Global.TotalRecovered,
         };
         handleData(globalData);
+        handleCountries(data.Countries);
       }
     })
     .catch((error) => {
@@ -28,4 +29,4 @@ const loadAPIData = (handleData, handleError) => {
     });
 };
 
-export default loadAPIData;
+export default loadAPIDataWithCountries;

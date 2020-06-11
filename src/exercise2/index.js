@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import GlobalData from '../repository/loadAPIdata';
+import loadAPIdata from '../repository/loadAPIdata';
 import { Panel, PanelHeader, Spinner, PanelContent } from '@marketgoo/ola';
 import CovidPanelContent from '../components/CovidPanelContent';
 
@@ -8,7 +8,7 @@ export default () => {
   const [isError, setIsError] = useState('');
 
   useEffect(() => {
-    GlobalData(setGlobalData, setIsError);
+    loadAPIdata(setGlobalData, setIsError);
   }, []);
 
   return (
@@ -34,7 +34,7 @@ export default () => {
           ) : (
             <CovidPanelContent
               className='ola_panel-content grid'
-              global={globalData}
+              data={globalData}
             />
           )}
         </Panel>

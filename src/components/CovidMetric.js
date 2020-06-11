@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Metric } from '@marketgoo/ola';
 
 const CovidMetric = (props) => {
@@ -10,15 +11,19 @@ const CovidMetric = (props) => {
           ? Math.sign(props.value) *
               (Math.abs(props.value) / 1000000).toFixed(2) +
             ' M'
-          : Math.sign(props.value) * Math.abs(props.value) ||
-            Math.abs(props.value) > 999
+          : Math.abs(props.value) > 999
           ? Math.sign(props.value) * (Math.abs(props.value) / 1000).toFixed(2) +
             ' k'
-          : Math.sign(props.value) * Math.abs(props.value)
+          : props.value.toString()
       }
       variant={props.variant}
     />
   );
+};
+
+CovidMetric.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
 };
 
 export default CovidMetric;

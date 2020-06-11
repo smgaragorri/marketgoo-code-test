@@ -4,6 +4,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Exercise1 from './exercise1';
 import Exercise2 from './exercise2';
+import Exercise3 from './exercise3';
 
 export default () => (
   <div className='ola'>
@@ -19,6 +20,9 @@ export default () => (
           <Route path='/exercise2'>
             <Exercise2 />
           </Route>
+          <Route path='/exercise3'>
+            <Exercise3 />
+          </Route>
         </Switch>
       </Router>
     </section>
@@ -30,5 +34,6 @@ const Main = () => (
     <img src={logo} className='App-logo' alt='logo' />
     <Link to='/exercise1'>Exercise 1</Link>
     <Link to='/exercise2'>Exercise 2</Link>
+    <Link to='/exercise3'>Exercise 3</Link>
   </section>
 );

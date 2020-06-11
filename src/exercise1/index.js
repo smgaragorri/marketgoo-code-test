@@ -18,7 +18,7 @@ export default () => {
           ></PanelHeader>
           <CovidPanelContent
             className='ola_panel-content grid'
-            global={GlobalData()}
+            data={GlobalData()}
           />
         </Panel>
       </section>
